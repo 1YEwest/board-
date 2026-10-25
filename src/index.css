@@ -1,0 +1,261 @@
+/* ─── Reset & Base ───────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  background: #ffffff;
+  color: #37352f;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Layout ─────────────────────────────────────── */
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Tabs ───────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #e8e5e0;
+  padding-bottom: 0;
+}
+
+.tab {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: #9b9a97;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab:hover {
+  color: #37352f;
+}
+
+.tab.active {
+  color: #37352f;
+  border-bottom-color: #37352f;
+  font-weight: 500;
+}
+
+/* ─── Ad Card ────────────────────────────────────── */
+.ad-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ad-card {
+  padding: 16px 0;
+  border-bottom: 1px solid #f0eeea;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.ad-card:last-child {
+  border-bottom: none;
+}
+
+.ad-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #f7f6f3;
+  flex-shrink: 0;
+}
+
+.ad-image-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  background: #f7f6f3;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c8c6c1;
+  font-size: 1.5rem;
+}
+
+.ad-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ad-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.ad-description {
+  font-size: 0.875rem;
+  color: #6b6966;
+  margin-bottom: 6px;
+}
+
+.ad-price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #37352f;
+}
+
+/* ─── Form ───────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  color: #9b9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #e8e5e0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #37352f;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #a8a5a0;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px dashed #d3d1cc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #6b6966;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.form-file-label:hover {
+  background: #f7f6f3;
+  border-color: #a8a5a0;
+}
+
+.form-file-input {
+  display: none;
+}
+
+.form-file-name {
+  font-size: 0.8rem;
+  color: #9b9a97;
+  margin-top: 2px;
+}
+
+.form-submit {
+  padding: 10px 20px;
+  background: #37352f;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: opacity 0.15s;
+}
+
+.form-submit:hover {
+  opacity: 0.85;
+}
+
+.form-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─── Messages ───────────────────────────────────── */
+.message {
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.message.success {
+  background: #e6f7e9;
+  color: #1a7a2e;
+}
+
+.message.error {
+  background: #fde8e8;
+  color: #c53030;
+}
+
+/* ─── Loading ────────────────────────────────────── */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #9b9a97;
+  font-size: 0.9rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: #9b9a97;
+  font-size: 0.9rem;
+}
+
+/* ─── Image preview ──────────────────────────────── */
+.image-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-top: 4px;
+}
